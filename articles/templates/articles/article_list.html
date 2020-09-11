@@ -1,0 +1,27 @@
+{% extends 'base_layout.html' %}
+
+{%block content %}
+        <h1>Article List</h1>
+        <div class="articles" >
+            <!-- Python Code Template Tags-->
+            <!-- To print python variables put them in double curly braces -->
+            <!-- To write python code put it in curly brace percent sign (endfor endblock etc..) 
+            -->
+            {%for article in articles %}
+                <div class="article">
+                    <span>
+                        <a href = "{% url 'articles:detail' slug=article.slug %}">
+                        <h2>{{article.title}}</h2>
+                        <p>{{article.snippet}}</p>
+                        <p>{{article.date}}</p>
+                        <p class="author"><a href = article_create.html></a>added by {{article.author.username}}</p>
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %} 
+
+
+
+
+
