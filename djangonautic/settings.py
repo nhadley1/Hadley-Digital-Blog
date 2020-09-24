@@ -25,7 +25,7 @@ SECRET_KEY = '=(5_q^mp+4hr0#zhb+auw3)csv)r1mtc)fwicgu&((e_*6gu!4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nhadley1.pythonanywhere.com']
 
 
 # Application definition
@@ -120,6 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = '/home/nhadley1/Hadley-Digital-Blog/static'
 
 #nate - include this to include static files in a folder called assets.
 STATICFILES_DIRS = [
