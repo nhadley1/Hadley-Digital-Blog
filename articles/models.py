@@ -2,12 +2,13 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(max_length = 100)
     slug = models.SlugField()
-    body = models.TextField()
+    body = RichTextField(blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
     thumb = models.ImageField(default='hadley_logo.png', blank=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE, default = None)
@@ -17,7 +18,4 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-    #returns first 50 characters of the article.
-    #This works even though it says self.body is unsriptable.
-    def snippet(self):
-        return self.body[:50] + '...'
+    
